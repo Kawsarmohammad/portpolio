@@ -1,0 +1,354 @@
+@charset "utf-8";
+
+html {
+    /* ブラウザのデフォルトが16px */
+    /* デフォルトの16pxの代わりに1emが10pxになるように調整（ちょうせい） */
+    font-size: 62%;
+  }
+    header {
+    color: rgb(25, 251, 0);
+    font-size: 38px;
+  font-weight: bold;
+  text-align: center;
+  animation: neonBlur 10s infinite; /* 文字に影（かげ）をつけてネオンっぽく*/
+  }
+ 
+  /* ヘッダーの文字（もじ）の透明度（とうめいど）、アニメーションの指定（してい） */
+  header > span:nth-child(1) {
+    animation: neonBlink 1s infinite; /* 点滅（てんめつ）の速度（そくど） */
+  }
+  header > span:nth-child(2) {
+    animation: neonBlink 1s infinite; /* 点滅（てんめつ）の速度（そくど） */
+  }
+  header > span:nth-child(3) {
+    animation: neonBlink 1s infinite; /* 点滅（てんめつ）の速度（そくど） */
+  }
+  header > span:nth-child(4) {
+    animation: neonBlink 1s infinite; /* 点滅（てんめつ）の速度（そくど） */
+  }
+  header > span:nth-child(5) {
+    animation: neonBlink 1s infinite; /* 点滅（てんめつ）の速度（そくど） */
+  }
+  header > span:nth-child(6) {
+    animation: neonBlink 1s infinite; /* 点滅（てんめつ）の速度（そくど） */
+  }
+  @keyframes neonBlink {
+    0% { opacity: 1; }
+    10% { opacity: .6; }
+    12% { opacity: 1; }
+    15% { opacity: .4; }
+    17% { opacity: 1; }
+    18% { opacity: .3; }
+    19% { opacity: 1; }
+    89% { opacity: 1; }
+    91% { opacity: .7; }
+    94% { opacity: 1; }
+    100% { opacity: 1; }
+  }
+ 
+  @keyframes neonBlur {
+    0% { text-shadow: 0px 0px 25px rgb(99, 97, 10); }
+    50% { text-shadow: 0px 0px 75px rgb(104, 20, 182); filter: blur(0.5px) }
+    100% { text-shadow: 0px 0px 25px rgb(255, 251, 0); }
+}
+/* opening shutter */
+.shutter{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:9999;
+  margin:0em;
+  padding:0em;
+  background-color: #1e1e1e;
+  animation:byeShutter 2.6s forwards;
+}
+
+.shutter::before {
+  content: '';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:0;
+  margin:auto;
+  padding:0em;
+  background-color: #fff;
+  animation:ShutterOpen 2.6s forwards;
+}
+@keyframes byeShutter {
+  70% {
+    opacity : 1;
+  }
+  100% {
+    opacity: 0;
+    display:none;
+    z-index: -1;
+  }
+}
+/* @keyframes shutterOpen   2020/10/29 change  by a.fukada*/
+@keyframes ShutterOpen {
+  0% {
+    width: 0;
+    height:0.05em;
+  }
+  50%{
+    width: 100%;
+    /* height:100%;   2020/10/29 change  by a.fukada*/
+    height:0.05em;
+  }
+  90%{
+    width: 100%;
+    height:100%;
+  }
+  100%{
+    width: 100%;
+    height:100%;
+  }
+
+  
+}
+
+
+  
+body{
+    line-height: 1.5;
+    color: rgb(185, 14, 100);
+    font-size: 1.6rem; /* 16px */
+    font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+    text-align: center;
+    background-color:aqua;
+    background-image:url(../img/ab.jpg);
+    background-size: 100%;
+}
+/*****************************/
+/* 見出し（みだし）           */
+/*****************************/
+h1 {
+    color: rgb(17, 206, 235);
+    background-color:  #46aef7;
+    font-size: 1.6em;
+}
+
+h3 {
+    border-left: solid 0.5em darkgray;
+    text-align: left;
+}
+
+/*****************************/
+/* セクション                 */
+/*****************************/
+.container01, .container02, .container03 {
+    border-radius: 0.5em 1.5em;
+    background-color:rgba(139,0,0,0.479);
+}
+
+/*****************************/
+/* テーブル１                 */
+/*****************************/
+/* class="table01" */
+.table01{
+    margin: auto;   /*テーブルを中央（ちゅうおう）に配置（はいち）*/
+    border-collapse: collapse;
+    color: whitesmoke;
+    background-color: #2CD8D5;
+}
+th, td {
+    border: solid 0.1em #fff;
+}
+.ruby {
+    font-size: 0.7em;
+}
+.image01{
+    width: 70%;
+}
+/*****************************/
+/* フッター                   */
+/*****************************/
+footer {
+    color: whitesmoke;
+    text-align: center;
+    background-color: #46aef7;
+}
+
+/*****************************/
+/* class="cat-container02"   */
+/*****************************/
+/* Touch Cat! partⅡ */
+.cat-container02{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.cat-block02{
+  position: relative;
+  width: 16em;
+  height: 22em;
+  margin-left:2em;
+  margin-right: 2em;
+}
+.cat-block02 p {
+  font-size: 0.7em;
+  text-align: center;
+}
+
+/*----- 画像をマスクして文字拡大 -----*/
+.cat-item02_1{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 16em;
+  height: 16em;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none; 
+}
+.cat-item02_1 img{
+  width: 16em;
+  height: 16em;
+  object-fit: cover;
+}
+.cat-item02_1 .caption {
+  padding-top: 7em;
+  font-size: 1em;
+  text-align: center;
+color:	white;
+}
+
+.cat-item02_1  .mask {
+position: absolute;	/* 絶対位置指定 */
+width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  background-color: rgba(209, 68, 79, 0.7);	/* マスクは半透明 */
+transition: all 0.5s ease-out;
+  opacity: 0; /* マスクを表示しない */
+}
+.cat-item02_1:hover  .mask {
+  transform: scale(4);   /* 4倍に拡大 */
+opacity: 1; /* マスクを表示する */
+}
+
+/*----- 上からスライドして画像をマスク -----*/
+.cat-item02_2{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 16em;
+  height: 16em;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none; 
+}
+.cat-item02_2 img{
+  width: 16em;
+  height: 16em;
+  object-fit: cover;
+}
+.cat-item02_2 .caption {
+  padding-top: 7em;
+  font-size: 1em;
+  text-align: center;
+color:	blue;
+}
+.cat-item02_2  .mask {
+position: absolute;	/* 絶対位置指定 */
+width: 100%;
+height: 100%;
+top: -110%;	/* 枠の上に置いて表示させない */
+  left: 0;
+  margin: 0;
+background-color: rgba(10, 33, 240, 0.7);	/* マスクは半透明 */
+transition: all 1s ease;
+}
+.cat-item02_2:hover .mask {
+top: 0;	/* 下に降りてくるように見せる */
+}
+
+
+/*----- 横に１８０度回転して画像をマスク -----*/
+.cat-item02_3{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 16em;
+  height: 16em;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none; 
+}
+.cat-item02_3 img{
+  width: 16em;
+  height: 16em;
+  object-fit: cover;
+}
+.cat-item02_3 .caption {
+  padding-top: 7em;
+  font-size: 1em;
+  text-align: center;
+color:	white;
+}
+.cat-item02_3  .mask {
+position: absolute;	/* 絶対位置指定 */
+  width: 100%;
+height: 100%;
+top: 0;	/* 枠の上に置いて表示させない */
+  left: 0;
+  margin: 0;
+  background-color: rgba(145, 14, 86, 0.7);	/* マスクは半透明 */
+  transform:	rotateY(-180deg);
+transition: all 3s ease;
+  opacity: 0; /* 表示させない */
+}
+.cat-item02_3:hover .mask {
+transform: rotateY(0deg) scale(3);
+  opacity: 1; /* ホバーで表示する */
+}
+
+.back{
+  text-align: left;
+}
+#btn99{
+  padding: 0.5em;
+  border-radius: 0.3em;
+  color: rgb(118, 62, 2);
+  font-size: 1.5em;
+  background: rgb(223, 52, 9);
+  cursor: pointer; /*カーソルをポインターの形（かたち）にする*/
+}
+/*responsive starts here*/
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+
+}
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+    }
+    nav ul {
+        padding: 2.5rem;
+    }
+    nav li {
+        display: block;
+        margin-right: 0;
+        margin: 1rem 0;
+    }
+
+}
+@media (max-width: 400px) {
+
+}
+
+
+/*responsive ends here*/
